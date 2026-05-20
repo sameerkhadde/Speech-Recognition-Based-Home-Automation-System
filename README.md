@@ -1,3 +1,5 @@
+
+
 # Speech Recognition Based Home Automation System
 
 This project is developed using Arduino UNO, HC-05 Bluetooth Module, and Relay Module to control home appliances wirelessly using voice commands through a mobile application.
