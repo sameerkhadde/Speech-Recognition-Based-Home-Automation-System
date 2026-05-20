@@ -1,0 +1,36 @@
+char data;
+
+void setup() {
+
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+
+  digitalWrite(7, HIGH);
+  digitalWrite(8, HIGH);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  if (Serial.available()) {
+
+    data = Serial.read();
+
+    if (data == 'A') {
+      digitalWrite(7, LOW);
+    }
+
+    if (data == 'a') {
+      digitalWrite(7, HIGH);
+    }
+
+    if (data == 'B') {
+      digitalWrite(8, LOW);
+    }
+
+    if (data == 'b') {
+      digitalWrite(8, HIGH);
+    }
+  }
+}
