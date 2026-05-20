@@ -1,4 +1,3 @@
-
 **#Task 4**
 # Speech Recognition Based Home Automation System
 
