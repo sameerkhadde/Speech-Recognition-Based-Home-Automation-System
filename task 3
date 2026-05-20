@@ -1,1 +1,49 @@
+# Arduino Push Button Counter
 
+This project counts the number of push button presses using Arduino UNO and displays the count in the Serial Monitor.
+
+## Components Used
+- Arduino UNO
+- Push Button
+- Breadboard
+- Jumper Wires
+
+## Features
+- Counts button presses
+- Displays output in Serial Monitor
+- Uses digital input concepts
+
+## Concepts Learned
+- Digital Input Handling
+- Push Button Interfacing
+- Arduino Programming Basics
+- Embedded Systems Fundamentals
+
+## Circuit Connection
+- Push Button connected to Digital Pin 2
+- GND connection used with pull-down/pull-up logic
+
+## Arduino Code
+
+```cpp
+int button = 2;
+int count = 0;
+int lastState = HIGH;
+
+void setup() {
+  pinMode(button, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int state = digitalRead(button);
+
+  if(state == LOW && lastState == HIGH) {
+    count++;
+    Serial.print("Button Count: ");
+    Serial.println(count);
+    delay(200);
+  }
+
+  lastState = state;
+}
