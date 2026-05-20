@@ -1,0 +1,23 @@
+int button = 2;
+int count = 0;
+int lastState = HIGH;
+
+void setup() {
+  pinMode(button, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int state = digitalRead(button);
+
+  if(state == LOW && lastState == HIGH) {
+    count++;
+
+    Serial.print("Count = ");
+    Serial.println(count);
+
+    delay(200);
+  }
+
+  lastState = state;
+}
