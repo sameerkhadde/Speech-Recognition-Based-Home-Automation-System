@@ -1,0 +1,42 @@
+int led1 = 2;
+int led2 = 3;
+int led3 = 4;
+
+int button1 = 5;
+int button2 = 6;
+int button3 = 7;
+
+void setup() {
+
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+
+  pinMode(button1, INPUT_PULLUP);
+  pinMode(button2, INPUT_PULLUP);
+  pinMode(button3, INPUT_PULLUP);
+}
+
+void loop() {
+
+  // Button 1 controls LED 1
+  if (digitalRead(button1) == LOW) {
+    digitalWrite(led1, HIGH);
+  } else {
+    digitalWrite(led1, LOW);
+  }
+
+  // Button 2 controls LED 2
+  if (digitalRead(button2) == LOW) {
+    digitalWrite(led2, HIGH);
+  } else {
+    digitalWrite(led2, LOW);
+  }
+
+  // Button 3 controls LED 3
+  if (digitalRead(button3) == LOW) {
+    digitalWrite(led3, HIGH);
+  } else {
+    digitalWrite(led3, LOW);
+  }
+}
